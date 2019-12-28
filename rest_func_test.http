@@ -1,8 +1,17 @@
-GET http://localhost:3000
+GET http://localhost:3000/users
 Accept: */*
 Cache-Control: no-cache
 
 <> 2019-12-28T121522.200.html
 
 ###
+POST http://localhost:3000/users
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{}
+
+###
+
 
