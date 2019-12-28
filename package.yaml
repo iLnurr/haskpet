@@ -23,9 +23,10 @@ dependencies:
 - base >= 4.7 && < 5
 - yesod-core
 - yesod
+- text
 
 default-extensions:
-  OverloadedStrings, QuasiQuotes, TemplateHaskell, TypeFamilies, ViewPatterns
+  OverloadedStrings, QuasiQuotes, TemplateHaskell, TypeFamilies, ViewPatterns, ExtendedDefaultRules, RecordWildCards
 
 library:
   source-dirs: src

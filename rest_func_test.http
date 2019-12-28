@@ -10,7 +10,10 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{}
+{
+  "age": 34,
+  "name": "Michael"
+}
 
 ###
 
