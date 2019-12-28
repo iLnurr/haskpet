@@ -21,6 +21,11 @@ description:         Please see the README on GitHub at <https://github.com/iLnu
 
 dependencies:
 - base >= 4.7 && < 5
+- yesod-core
+- yesod
+
+default-extensions:
+  OverloadedStrings, QuasiQuotes, TemplateHaskell, TypeFamilies, ViewPatterns
 
 library:
   source-dirs: src
