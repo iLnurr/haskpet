@@ -3,7 +3,7 @@ import Control.Monad.Logger (runStderrLoggingT)
 import Control.Monad.Trans.Resource (runResourceT)
 import Database.Persist.Sqlite
 import Foundation
-import User
+import Models
 import Yesod
 
 main :: IO ()

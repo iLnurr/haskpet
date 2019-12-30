@@ -4,6 +4,6 @@ import Foundation
 import Yesod.Core
 
 import Controller
-import User
+import Models
 
 mkYesodDispatch "App" resourcesApp

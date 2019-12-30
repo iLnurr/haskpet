@@ -7,7 +7,7 @@ import Database.Persist.TH
 import Yesod
 
 import Foundation
-import User
+import Models
 
 getUserR :: Handler Value
 getUserR = do

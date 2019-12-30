@@ -1,4 +1,4 @@
-module User where
+module Models where
 
 import Data.Aeson
 import Database.Persist
