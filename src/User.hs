@@ -1,19 +1,23 @@
 module User where
 
-import GHC.Generics
 import Data.Text (Text)
 import Data.Aeson
 import Yesod
 import Foundation
 
-data User = User
-    { name :: Text
-    , age  :: Int 
-    } deriving Generic
-    
+share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
+User
+    name String
+    age Int
+    deriving Show
+|]
+
 instance ToJSON User  where
-  toEncoding = genericToEncoding defaultOptions
-instance FromJSON User
+  toJSON (User name age) = object ["name" .= name, "age" .= age]
+instance FromJSON User where
+  parseJSON = withObject "User" $ \v -> User
+    <$> v .: "name"
+    <*> v .: "age"
 
 getUserR :: Handler Value
 getUserR = returnJson $ User "Michael" 28
