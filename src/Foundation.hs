@@ -15,6 +15,6 @@ instance YesodPersist App where
     runDB action = do
         App pool <- getYesod
         runSqlPool action pool
-        
+
 openConnectionCount :: Int
 openConnectionCount = 10

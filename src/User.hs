@@ -1,9 +1,8 @@
 module User where
 
-import Data.Text (Text)
 import Data.Aeson
-import Yesod
-import Foundation
+import Database.Persist.TH
+import Database.Persist
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 User
@@ -18,11 +17,5 @@ instance FromJSON User where
   parseJSON = withObject "User" $ \v -> User
     <$> v .: "name"
     <*> v .: "age"
-
-getUserR :: Handler Value
-getUserR = returnJson $ User "Michael" 28
-
-postUserR :: Handler Value
-postUserR = do
-  user <- requireCheckJsonBody :: Handler User
-  returnJson user
+instance ToJSON (Entity User) where
+  toJSON = entityIdToJSON
