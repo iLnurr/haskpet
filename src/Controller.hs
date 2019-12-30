@@ -1,10 +1,10 @@
 module Controller where
 
 import Data.Aeson
-import Yesod
 import Database.Persist
 import Database.Persist.Sqlite
 import Database.Persist.TH
+import Yesod
 
 import Foundation
 import User
@@ -18,4 +18,5 @@ postUserR :: Handler Value
 postUserR = do
   user <- requireCheckJsonBody :: Handler User
   userId <- runDB $ insert user
-  returnJson user
+  userDB <- runDB $ get userId
+  returnJson userDB

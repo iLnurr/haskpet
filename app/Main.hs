@@ -1,10 +1,10 @@
 import Application () -- for YesodDispatch instance
+import Control.Monad.Logger (runStderrLoggingT)
+import Control.Monad.Trans.Resource (runResourceT)
+import Database.Persist.Sqlite
 import Foundation
 import User
 import Yesod
-import Database.Persist.Sqlite
-import Control.Monad.Trans.Resource (runResourceT)
-import Control.Monad.Logger (runStderrLoggingT)
 
 main :: IO ()
 main =

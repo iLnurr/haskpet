@@ -3,7 +3,7 @@ module Application where
 import Foundation
 import Yesod.Core
 
-import User
 import Controller
+import User
 
 mkYesodDispatch "App" resourcesApp

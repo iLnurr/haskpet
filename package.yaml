@@ -21,18 +21,18 @@ description:         Please see the README on GitHub at <https://github.com/iLnu
 
 dependencies:
 - base >= 4.7 && < 5
-- yesod-core
-- yesod
+- bytestring
 - text
 - aeson
+- data-default-class
+- monad-logger
+- resourcet
 - persistent
 - persistent-sqlite
 - persistent-template
 - json-rpc-server
-- monad-logger
-- resourcet
-- data-default-class
-- bytestring
+- yesod-core
+- yesod
 
 default-extensions:
   OverloadedStrings, QuasiQuotes, TemplateHaskell, TypeFamilies, ViewPatterns, ExtendedDefaultRules, RecordWildCards, DeriveGeneric, EmptyDataDecls, FlexibleContexts, FlexibleInstances, GADTs, GeneralizedNewtypeDeriving, MultiParamTypeClasses
