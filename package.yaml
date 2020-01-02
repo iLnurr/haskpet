@@ -27,6 +27,7 @@ dependencies:
 - data-default-class
 - monad-logger
 - resourcet
+- mtl
 - persistent
 - persistent-sqlite
 - persistent-template
