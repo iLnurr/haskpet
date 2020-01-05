@@ -26,6 +26,9 @@ dependencies:
 - aeson
 - data-default-class
 - monad-logger
+- monad-control
+- conduit
+- conduit-extra
 - resourcet
 - mtl
 - persistent

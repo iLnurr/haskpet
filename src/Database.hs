@@ -7,10 +7,17 @@ import Control.Monad.Reader (ReaderT, MonadIO)
 
 import Models
 
-getUsers :: MonadIO m => ReaderT SqlBackend m [Entity User]
-getUsers = selectList ([] :: [Filter User]) []
+import Control.Monad.Trans.Resource
+import Control.Monad.Trans.Control
+import Control.Monad.Logger
 
-insertUser :: MonadIO m => User -> ReaderT SqlBackend m (Key User)
-insertUser = insert
+withDbRun :: SqlPersistT (NoLoggingT (ResourceT IO)) b -> IO b
+withDbRun = runSqlite "test.db3"
+
+getUsers :: IO [Entity User]
+getUsers = withDbRun $ selectList ([] :: [Filter User]) []
+
+insertUser :: User -> IO (Key User)
+insertUser u = withDbRun $ insert u
 
 
