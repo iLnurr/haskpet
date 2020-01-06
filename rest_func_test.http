@@ -21,7 +21,12 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"jsonrpc": "2.0", "method": "list", "params": [], "id": 1}
+{
+  "jsonrpc":"2.0",
+  "method":"list",
+  "params":[],
+  "id":1
+}
 
 ###
 POST http://localhost:3000/
@@ -29,10 +34,17 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"jsonrpc": "2.0", "method": "add", "params": {"user":  {
-  "age": 34,
-  "name": "Michael"
-}}, "id": 1}
+{
+  "jsonrpc":"2.0",
+  "method":"add",
+  "params":{
+    "user":{
+      "age":13,
+      "name":"MichaelFromRPC"
+    }
+  },
+  "id":1
+}
 
 ###
 
