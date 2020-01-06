@@ -2,5 +2,5 @@
 
 haskell pet project using Yesod web framework
 
-two endpoints: to add model and get all models
-and database to persist
+https://www.yesodweb.com/book/persistent
+https://hackage.haskell.org/package/json-rpc-server-0.2.2.0
